@@ -1,0 +1,48 @@
+&CONTROL
+  calculation = 'bands',
+  prefix = 'mos2',
+  outdir = '../tmp/',
+  pseudo_dir = '../pseudo/',
+  verbosity = 'high'
+/
+&SYSTEM
+  ibrav = 0,
+  celldm(1) = 6.017,
+  celldm(3) = 17.33460,
+  nat = 3,
+  ntyp = 2,
+  ecutwfc = 80,
+  ecutrho = 600,
+  nspin = 1
+  occupations = 'smearing',   ! Samakan dengan SCF agar Fermi level konsisten
+  smearing = 'marzari-vanderbilt',
+  degauss = 0.02,
+  nbnd = 40,                   ! WAJIB: Agar pita atas (konduksi) terlihat
+  assume_isolated = '2D'
+/
+&ELECTRONS
+  conv_thr = 1.0d-8
+  diago_full_acc = .true.  ! WAJIB untuk calculation='bands' dengan banyak nbnd
+/
+  ! --- PAKAI CELL PARAMETERS DARI HASIL VC-RELAX ---
+CELL_PARAMETERS (alat)
+   0.980500929   0.000000000   0.000000000
+  -0.490250464   0.849138713   0.000000000
+   0.000000000   0.000000000   5.440000000
+! -----------------------------------------------
+
+ATOMIC_SPECIES
+  Mo 95.95 Mo.pbe-spn-rrkjus_psl.1.0.0.UPF
+  S  32.07 S.pbe-nl-rrkjus_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS (crystal)
+  Mo 0.0000000000 0.0000000000 0.0000000000 ! Gunakan posisi terakhir dari output vc-relax/scf
+  S 0.3333330000 0.6666670000 0.6193557287
+  S 0.6666670000 0.3333330000 0.3806442713
+
+K_POINTS crystal_b
+4
+ 0.0000 0.0000 0.0000 30   ! Γ
+ 0.5000 0.0000 0.0000 30   ! M
+ 0.3333 0.3333 0.0000 30   ! K
+ 0.0000 0.0000 0.0000 30   ! Γ
