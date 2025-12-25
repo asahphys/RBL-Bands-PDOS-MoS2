@@ -1,0 +1,10 @@
+&PROJWFC
+    prefix = 'mos2'
+    outdir = '../tmp/'
+    filpdos = 'mos2'
+    Emin = -12.0
+    Emax = 6.0
+    DeltaE = 0.01
+    ngauss = 0
+    degauss = 0.005
+/
