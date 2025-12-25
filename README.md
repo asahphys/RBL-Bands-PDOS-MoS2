@@ -1,5 +1,3 @@
-# RBL-Bands-PDOS-MoS2
-Completed Density Functional Theory (DFT) study of electronic band structure and projected density of states (PDOS) of MoS2 using Quantum ESPRESSO for Research Based Learning (RBL) coursework.
 # MoS₂ Band Structure and PDOS (DFT – Quantum ESPRESSO)
 
 This repository contains **Density Functional Theory (DFT)** results for **monolayer MoS₂**, focusing on **electronic band structure** and **projected density of states (PDOS)** calculations performed using **Quantum ESPRESSO**.
@@ -8,7 +6,7 @@ The data and figures were generated as part of an academic computational study a
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repository
 
 ```text
 .
